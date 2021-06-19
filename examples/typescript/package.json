@@ -1,0 +1,22 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "web/index.mjs",
+  "scripts": {
+    "dev": "node --loader ts-node/esm node_modules/@shack-js/cli/src/index.mjs dev -e .ts",
+    "build": "shack build && tsc",
+    "start": "shack start -e .js -s ./dist/web -a ./dist/tsc/apis"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@shack-js/cli": "^1.0.4"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.2.3",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.4"
+  }
+}

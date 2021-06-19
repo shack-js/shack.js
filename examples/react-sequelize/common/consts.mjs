@@ -1,0 +1,1 @@
+export const TODO_TEXT_LENGTH = 128

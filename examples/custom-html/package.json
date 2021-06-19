@@ -1,0 +1,21 @@
+{
+  "name": "custom-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "web/index.mjs",
+  "scripts": {
+    "dev": "shack dev",
+    "build": "shack build",
+    "start": "shack start"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@shack-js/cli": "^1.0.0"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.3.1"
+  }
+}
