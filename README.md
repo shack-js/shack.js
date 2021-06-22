@@ -1,7 +1,5 @@
 # shack.js
 
-![icon](./shack.png)
-
 shack.js is a tool to ease your coding
 
 with shack.js, you can just forget exposing APIs from backend and making requests from frontend
