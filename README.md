@@ -6,9 +6,8 @@ with shack.js, you can just forget exposing APIs from backend and making request
 
 so you can use much less code to build a website
 
-## usage
+## quick usage
 
-init node project, `npx @shack-js/cli init <name> -t <template>`, default template is [basic](https://github.com/shack-js/shack.js) 
 ```
 npx @shack-js/cli init my-app 
 cd my-app
@@ -20,10 +19,19 @@ npm run dev
 
 ## examples
 
-[examples](./examples/)
+- [basic](./examples/basic)
+- [custom html](./examples/custom-html)
+- [jwt auth](./examples/jwt-auth)
+- [typescript](./examples/typescript)
+- [react](./examples/react)
+- [react+typescript](./examples/react-typescript)
+- [sequelize](./examples/react-sequelize)
 
 ## templates
+
+ `npx @shack-js/cli init <name> -t <template>`, default template is `basic`
 
 - [basic](https://github.com/shack-js/template-basic)
 - [typescript](https://github.com/shack-js/template-typescript)
 - [react](https://github.com/shack-js/template-react)
+- [react-typescript](https://github.com/shack-js/template-react-typescript)

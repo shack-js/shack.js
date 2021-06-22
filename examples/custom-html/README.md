@@ -1,6 +1,6 @@
-# template-basic
+# custom html
 
-basic template for shack.js
+just change `html-webpack-plugin` config in `shack.config.js`
 
 ## init
 

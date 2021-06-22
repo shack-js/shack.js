@@ -1,6 +1,6 @@
-# template-typescript
+# typescript example
 
-typescript template for shack.js
+typescript example for shack.js
 
 ## init
 

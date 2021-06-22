@@ -1,6 +1,6 @@
-# template-basic
+# sequelize example
 
-react template for shack.js
+sequelize example for shack.js
 
 ## init
 

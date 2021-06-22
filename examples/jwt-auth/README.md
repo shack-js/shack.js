@@ -1,6 +1,6 @@
-# template-basic
+# jwt auth example
 
-react template for shack.js
+auth is based on structure, check `apis/**/_auth.mjs`
 
 ## init
 

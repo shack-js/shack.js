@@ -1,6 +1,6 @@
-# template-basic
+# react example
 
-basic template for shack.js
+react example for shack.js
 
 ## init
 
