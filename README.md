@@ -1,10 +1,7 @@
 # shack.js
 
-shack.js is a tool to ease your coding
+with shack.js you can just forget `fetch`, `axios` and things alike, you call backend functions directly, and of course with access control
 
-with shack.js, you can just forget exposing APIs from backend and making requests from frontend
-
-so you can use much less code to build a website
 
 ## quick usage
 

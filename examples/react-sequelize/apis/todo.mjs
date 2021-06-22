@@ -7,7 +7,6 @@ export const list = async () => {
 
 export const toggle = async (id = 0, checked = false) => {
   await Todo.update({ checked }, { where: { id } })
-  await delay(1000)
 }
 
 export const add = async (text = '') => {
@@ -16,8 +15,4 @@ export const add = async (text = '') => {
 
 export const remove = async (id = 0) => {
   await Todo.destroy({ where: { id } })
-}
-
-function delay(mili) {
-  return new Promise(resolve => setTimeout(resolve, mili))
 }
