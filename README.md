@@ -14,6 +14,13 @@ npm run dev
 # npm run start
 ```
 
+keep these in mind when you code, and it should work:
+
+- keep backend functions in `apis` folder
+- add webpack configs you need into `shack.config.js` 
+
+
+
 ## examples
 
 - [basic](./examples/basic)
@@ -32,3 +39,9 @@ npm run dev
 - [typescript](https://github.com/shack-js/template-typescript)
 - [react](https://github.com/shack-js/template-react)
 - [react-typescript](https://github.com/shack-js/template-react-typescript)
+
+## todos
+
+- hot reload for browser 
+- stop caching modules on server when dev
+- expose express instance for futher custom like websocket, SSE
