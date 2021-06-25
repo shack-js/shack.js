@@ -1,7 +1,7 @@
 import { FC, useState } from "react"
-import { login, register } from "../../apis/user"
+import { login, register } from "../apis/user"
 import { Loader, Form, Button } from "semantic-ui-react"
-import { token, user } from '../stores'
+import { token, user } from './stores'
 import { Redirect, Link } from 'react-router-dom'
 
 interface LoginProps {

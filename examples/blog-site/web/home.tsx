@@ -1,7 +1,7 @@
 import { Segment } from "semantic-ui-react"
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { useEffect, useState } from "react"
-import { list } from '../../apis/article'
+import { list } from '../apis/article'
 import MarkdownView from 'react-showdown'
 
 const mdOptions = {

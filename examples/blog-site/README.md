@@ -9,7 +9,7 @@ npm i
 yarn dev 
 ```
 now check localhost:3000 to see if it's working
-![screenshot](./docs/inital.jpg)
+![screenshot](./screenshots/inital.jpg)
 
 ## define database tables
 
@@ -33,30 +33,22 @@ and we need to create tables when we first start
 await sequelize.sync()
 ```
 
-![](docs/inital.jpg)
+![](./screenshots/inital.jpg)
 
 nothing changed yet
 
-## use history instead of hash 
+## use router and semantic-ui
 
-set all routes to index.html
 ```
-// apis/_init.ts
-app.use('*', (req, res) => res.sendFile(join(config.assetsFolder, 'index.html')))
-```
-
-ref resources with absolute path
-```
-// shack.config.mjs
-  output:{
-    ...
-    publicPath: '/'
-  }
+npm i react-router-dom semantic-ui-react semantic-ui-css -S
+npm i @types/react-router-dom css-loader mini-css-extract-plugin -D
 ```
 
+- `apis/_init.ts` route all 404 to index.html
+- `shack.config.mjs` add css/file loader
 - `web/index.tsx` basic htmls and basic routes
 
-![](docs/frame.jpg)
+![](./screenshots/frame.jpg)
 
 ## user register and login
 
@@ -71,22 +63,16 @@ npm i @types/md5 @types/jsonwebtoken -D
 
 to add register and login page, we first need to add router and ui
 
-```
-npm i react-router-dom semantic-ui-react semantic-ui-css -S
-npm i @types/react-router-dom css-loader style-loader -D
-```
-
-- `shack.config.mjs` add style/css/file loader
 - `apis/_auth.ts` try get user from jwt header
 - `apis/user.ts` add `info` method so login user can get his info
 - `web/stores.ts` add stores for token and user, sync token from/to localstorage
 - `web/Navbar.tsx` render menus based on login state
 - `web/Content.tsx` render components based on route
-- `web/login/index.tsx` login/register page
-- `web/home/index.tsx` home page **empty**
-- `web/write/index.tsx` write page **empty**
+- `web/login.tsx` login/register page
+- `web/home.tsx` home page **unfinished**
+- `web/write.tsx` write page **unfinished**
 
-![](docs/login.jpg)
+![](./screenshots/login.jpg)
 
 ## writing stories
 
@@ -99,9 +85,9 @@ npm i @types/showdown -D
 
 - `apis/authed/_auth.ts` allow only user already login
 - `apis/authed/article.ts` add `add` method to store markdown
-- `web/write/index.tsx` edit markdown and save 
+- `web/write.tsx` edit markdown and save 
 
-![](./docs/write.jpg)
+![](./screenshots/write.jpg)
 
 ## home blog list
 
@@ -112,9 +98,9 @@ npm i react-infinite-scroll-component react-showdown -S
 ```
 
 - `apis/article.ts` load articles from db
-- `web/home/index.tsx` show articles 
+- `web/home.tsx` show articles 
 
-![home](./docs/home.jpg)
+![home](./screenshots/home.jpg)
 
 and yes it's done!
 

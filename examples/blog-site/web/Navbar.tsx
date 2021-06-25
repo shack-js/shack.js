@@ -1,4 +1,4 @@
-import { Menu, Icon, Button, Dropdown } from 'semantic-ui-react'
+import { Menu, Icon, Dropdown } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { token, user } from './stores'
 
@@ -9,7 +9,7 @@ const Navbar: React.FC<{}> = () => {
   return <Menu secondary={true} pointing={true}>
     <Menu.Item as={Link} name='home' to='/'>
       <Icon name='home' />
-      home
+      home 
     </Menu.Item>
     {account && <Menu.Item as={Link} name='write' to='/write'>
       <Icon name='write' />

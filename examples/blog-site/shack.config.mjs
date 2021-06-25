@@ -3,9 +3,13 @@ import { fileURLToPath } from 'url'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 
 export default {
-  entry: ['./web/index.tsx', 'semantic-ui-css/semantic.min.css'],
+  entry: [
+    './web/index.tsx',
+    'semantic-ui-css/semantic.min.css',
+  ],
   module: {
     rules: [
       {
@@ -19,11 +23,26 @@ export default {
           },
         ],
       }, {
-        test: /\.tsx?$/,
-        loader: "ts-loader",
-        options: {
-          compilerOptions: {
-            module: "ESNext",
+        test: /\.(m|c)?(t|j)sx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-typescript',
+              '@babel/preset-react',
+              '@babel/preset-env',
+            ],
+            plugins: [
+              "@babel/plugin-transform-runtime",
+              [
+                "auto-import", {
+                  "declarations": [
+                    { "default": "React", "path": "react" }
+                  ]
+                }
+              ],
+            ]
           }
         }
       }
@@ -38,11 +57,12 @@ export default {
       template: join(dirname(fileURLToPath(import.meta.url)), 'web', 'index.html'),
     }),
     new MiniCssExtractPlugin(),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
+    new CleanWebpackPlugin(),
   ],
   output: {
     path: join(dirname(fileURLToPath(import.meta.url)), 'dist', 'web'),
-    filename: '[contenthash].js',
+    filename: '[name].[contenthash].js',
     publicPath: '/'
   },
   optimization: {
@@ -51,6 +71,7 @@ export default {
     },
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    hot: true,
   }
 }

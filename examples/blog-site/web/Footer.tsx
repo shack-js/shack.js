@@ -1,7 +1,7 @@
 const Footer: React.FC<{}> = () => {
   return (
     <div className="footer">
-      <p>This is the footer</p>
+      <p>This is the footer </p>
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import { Link, Redirect, useHistory } from "react-router-dom";
 import { Button, Loader } from "semantic-ui-react";
-import { user } from '../stores'
+import { user } from './stores'
 import "react-mde/lib/styles/css/react-mde-all.css"
 import ReactMde from "react-mde"
 import { useState } from "react"
 import * as Showdown from "showdown"
-import { add } from '../../apis/authed/article'
+import { add } from '../apis/authed/article'
 
 const converter = new Showdown.Converter({
   tables: true,
