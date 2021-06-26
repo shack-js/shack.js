@@ -1,0 +1,20 @@
+{
+  "name": "elasticsearch-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "web/index.mjs",
+  "scripts": {
+    "dev": "shack dev",
+    "build": "shack build",
+    "start": "shack start"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.13.0",
+    "@shack-js/cli": "^1.0.12"
+  },
+  "devDependencies": {}
+}
