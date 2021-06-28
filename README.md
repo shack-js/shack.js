@@ -1,6 +1,6 @@
 # shack.js
 
-an fullstack framework? an alternative for ember.js or meteor, more clean and flex and less API to learn
+a JavaScript fullstack solution. an alternative for ember.js or meteor, more clean and flex and less API to learn
 
 with shack.js you can just forget `fetch`, `axios` and things alike, you **call backend functions directly**, and of course with **access control**
 
@@ -19,9 +19,9 @@ keep these in mind when you code, and it should work:
 - export backend functions to be used by web in `apis` folder
 - add webpack configs you need into `shack.config.js` 
 
-[![quick usage](https://img.youtube.com/vi/IhlW78_KaFI/0.jpg)](https://www.youtube.com/watch?v=IhlW78_KaFI)
+[![quick usage](https://img.youtube.com/vi/IhlW78_KaFI/0.jpg)](https://www.youtube.com/watch?v=IhlW78_KaFI&list=PLM1v95K5B1ntVsYvNJIxgRPppngrO_X4s)
 
-example on youtube: https://www.youtube.com/watch?v=IhlW78_KaFI
+example on youtube: https://www.youtube.com/watch?v=IhlW78_KaFI&list=PLM1v95K5B1ntVsYvNJIxgRPppngrO_X4s
 
 
 ## normal usage
