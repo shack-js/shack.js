@@ -21,6 +21,8 @@ keep these in mind when you code, and it should work:
 
 [![quick usage](https://img.youtube.com/vi/IhlW78_KaFI/0.jpg)](https://www.youtube.com/watch?v=IhlW78_KaFI)
 
+example on youtube: https://www.youtube.com/watch?v=IhlW78_KaFI
+
 
 ## normal usage
 ```
