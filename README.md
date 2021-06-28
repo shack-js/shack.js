@@ -38,6 +38,8 @@ npm run dev
 - [react](./examples/react)
 - [react+typescript](./examples/react-typescript)
 - [sequelize](./examples/react-sequelize)
+- [mongoose](./examples/mongoose)
+- [elasticsearch](./examples/elasticsearch)
 - [blog site](./examples/blog-site)
 
 ## tutorials
