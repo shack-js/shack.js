@@ -19,6 +19,9 @@ keep these in mind when you code, and it should work:
 - export backend functions to be used by web in `apis` folder
 - add webpack configs you need into `shack.config.js` 
 
+[![quick usage](https://img.youtube.com/vi/IhlW78_KaFI/0.jpg)](https://www.youtube.com/watch?v=IhlW78_KaFI)
+
+
 ## normal usage
 ```
 npx @shack-js/cli init my-app -t react-typescript
