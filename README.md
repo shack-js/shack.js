@@ -4,6 +4,42 @@ a JavaScript fullstack solution. an alternative for ember.js or meteor, more cle
 
 with shack.js you can just forget `fetch`, `axios` and things alike, you **call backend functions directly**, and of course with **access control**
 
+browser:
+
+```diff
+-import express from 'express'
+-import {json} from 'body-parser'
+import { platform } from 'os'
+
+-const app = express()
+-const port = 3000
+
+-const hello = async name => 'hello ' + name + '! from ' + platform()
++export const hello = async name => 'hello ' + name + '! from ' + platform()
+
+-app.use(express.static('public'))
+-app.use(json())
+-app.get('/hello', async (req, res) => {
+-  res.json(await hello(req.body.name))
+-})
+
+-app.listen(port, () => {
+-  console.log(`Example app listening at http://localhost:${port}`)
+-})
+```
+
+client:
+
+```diff
+-import axios from 'axios'
++import { hello } from '../apis/hello.mjs'
+  ;
+(async () => {
+-  alert((await axios.post({name:'world'})).data)
++  alert(await hello('world'))
+})()
+```
+
 
 ## quick usage
 
