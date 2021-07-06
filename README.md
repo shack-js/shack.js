@@ -4,7 +4,7 @@ a JavaScript fullstack solution. an alternative for ember.js or meteor, more cle
 
 with shack.js you can just forget `fetch`, `axios` and things alike, you **call backend functions directly**, and of course with **access control**
 
-browser:
+server:
 
 ```diff
 -import express from 'express'
