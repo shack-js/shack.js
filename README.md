@@ -35,7 +35,7 @@ client:
 +import { hello } from '../apis/hello.mjs'
   ;
 (async () => {
--  alert((await axios.post({name:'world'})).data)
+-  alert((await axios.post('/hello', {name:'world'})).data)
 +  alert(await hello('world'))
 })()
 ```
