@@ -26,6 +26,3 @@ const Index = () => <Router>
 </Router>
 
 render(<Index />, document.getElementById('react-root'))
-
-// @ts-ignore
-import.meta.webpackHot && import.meta.webpackHot.accept()

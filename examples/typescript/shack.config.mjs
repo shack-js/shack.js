@@ -1,5 +1,7 @@
 import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
+import ExtraCodeWebpackPlugin from 'extra-code-webpack-plugin'
+
 export default {
   entry: './web/index.ts',
   module: {
@@ -21,5 +23,12 @@ export default {
   output: {
     path: join(dirname(fileURLToPath(import.meta.url)), 'dist', 'web'),
     filename: '[contenthash].js'
-  }
+  },
+  plugins:[
+    new ExtraCodeWebpackPlugin({
+      codes: ({ isDev, isEntry }) => (isDev && isEntry) ? `
+      // @ts-ignore
+      import.meta.webpackHot.accept()` : ``
+    })
+  ]
 }

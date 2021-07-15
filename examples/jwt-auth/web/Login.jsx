@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { setHeaders } from '@shack-js/loader-fetch/src/fetch.js'
+import { setHeaders } from '@shack-js/loader-fetch/dist/fetch.js'
 import { login } from "../apis/user.mjs"
 import { HEADER_KEY } from "../common/consts.mjs"
 

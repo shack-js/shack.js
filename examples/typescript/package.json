@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@shack-js/cli": "^1.0.4"
+    "@shack-js/cli": "^1.0.17"
   },
   "devDependencies": {
     "ts-loader": "^9.2.3",

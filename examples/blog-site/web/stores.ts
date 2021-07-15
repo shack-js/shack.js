@@ -1,5 +1,5 @@
 import Store from 'react-tiny-states'
-import { setHeaders } from '@shack-js/loader-fetch/src/fetch'
+import { setHeaders } from '@shack-js/loader-fetch/dist/fetch'
 import { info } from '../apis/user'
 
 export const token = new Store('', [], async () => localStorage.getItem('jwt'))

@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@shack-js/cli": "^1.0.0"
-  }
+    "@shack-js/cli": "^1.0.17"
+  },
+  "devDependencies": {}
 }

@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/runtime": "^7.14.6",
-    "@shack-js/cli": "^1.0.12",
+    "@shack-js/cli": "^1.0.16",
     "jsonwebtoken": "^8.5.1",
     "md5": "^2.3.0",
     "react": "^17.0.2",
