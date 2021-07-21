@@ -24,11 +24,4 @@ export default {
     path: join(dirname(fileURLToPath(import.meta.url)), 'dist', 'web'),
     filename: '[contenthash].js'
   },
-  plugins:[
-    new ExtraCodeWebpackPlugin({
-      codes: ({ isDev, isEntry }) => (isDev && isEntry) ? `
-      // @ts-ignore
-      import.meta.webpackHot.accept()` : ``
-    })
-  ]
 }
