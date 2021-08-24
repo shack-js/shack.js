@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@elastic/elasticsearch": "^7.13.0",
-    "@shack-js/cli": "^1.0.17"
+    "@shack-js/cli": "^1.0.20"
   },
   "devDependencies": {}
 }
