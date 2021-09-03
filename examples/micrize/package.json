@@ -1,0 +1,33 @@
+{
+  "name": "micrize-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "web/index.ts",
+  "scripts": {
+    "dev": "cross-env DEV_MODE=true node --loader ts-node/esm node_modules/@shack-js/cli/src/index.mjs dev -e .ts -s dist/web -w",
+    "build": "tsc && shack build",
+    "start": "shack start -e .js -s dist/web -a dist/tsc/apis"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.14.6",
+    "@shack-js/cli": "^1.0.21",
+    "micrize": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-typescript": "^7.14.5",
+    "@types/express": "^4.17.12",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-auto-import": "^1.1.0",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "cross-env": "^7.0.3",
+    "ts-loader": "^9.2.3",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.4"
+  }
+}
