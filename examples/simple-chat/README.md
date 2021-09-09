@@ -2,6 +2,8 @@
 
 react + typescript + typeorm + socket.io
 
+![screenshot](./screenshot.gif)
+
 ## init
 
 ```
