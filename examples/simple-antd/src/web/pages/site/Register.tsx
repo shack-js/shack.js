@@ -1,11 +1,15 @@
-import { Form, Input, Button, Checkbox, PageHeader } from 'antd';
+import { Form, Input, Button, Modal, PageHeader } from 'antd';
 import { useForm } from 'antd/lib/form/Form';
+import { useState } from 'react';
+import { Link } from 'react-router-dom'
+import { accountExists, register } from '../../../apis/user';
+import { accountValidator, getRangeValidator, passwordValidator } from '../../utils/validators'
 
 const Register = () => {
   const [form] = useForm()
-  console.log(form.getFieldsError()
-    .filter(({ errors }) => errors.length)
-    .length)
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [errors, setErrors] = useState(true)
   return (<>
     <PageHeader>注册</PageHeader>
     <Form
@@ -16,46 +20,62 @@ const Register = () => {
       autoComplete="off"
       form={form}
     >
-      <Form.Item
+      <Form.Item        
         label="账号"
         name="account"
         rules={[{
           validator: async (_, val: string) => {
-            if (val.length < 6) throw '长度至少6位'
-            if (val.length > 32) throw '长度最大32位'
-            if (!/^[a-zA-Z][a-zA-Z0-9_]*$/.test(val)) throw '仅支持字母和数字且首字符不能为数字'
-          }
+            accountValidator(val)
+            if (await accountExists(val)) throw '账号已存在'
+          },
         }]}
       >
         <Input />
       </Form.Item>
 
-      <Form.Item
+      <Form.Item        
         label="密码"
         name="pass"
         rules={[{
-          validator: async (_, val: string) => {
-            if (val.length < 6) throw '长度至少6位'
-            if (val.length > 32) throw '长度最大32位'
-            if (!/^[a-zA-Z0-9_]*$/.test(val)) throw '仅支持字母和数字'
-          }
+          validator: async (_, val) => passwordValidator(val)
         }]}
       >
         <Input.Password />
       </Form.Item>
 
       <Form.Item
-        shouldUpdate
+        shouldUpdate={true}
         wrapperCol={{ offset: 8, span: 16 }}>
         {() => <Button type="primary" disabled={
-          form.getFieldsError()
+          // form.isFieldsTouched(true) ||
+          loading || form.getFieldsError()
             .filter(({ errors }) => errors.length)
             .length > 0
-        } >
-          注册
-        </Button>}
+        }
+          onClick={async () => {
+            setLoading(true)
+            try {
+              await register(form.getFieldsValue())
+              setSuccess(true)
+            } catch (e) {
+              form.validateFields()
+            } finally {
+              setLoading(false)
+            }
+          }}
+        >注册</Button>}
+
       </Form.Item>
     </Form>
+    <Modal title="恭喜!" visible={success} footer={[
+      <Link to='/login'>
+        <Button>
+          去登录
+        </Button>
+      </Link>
+    ]}>
+      <p>注册成功！</p>
+    </Modal>
   </>);
 }
 

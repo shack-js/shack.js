@@ -9,7 +9,7 @@ export class User extends BaseEntity implements IUser {
   @Column({ type: 'varchar', length: 32, unique: true })
   account: string
 
-  @Column({ type: 'varchar', length: 32 })
+  @Column({ type: 'varchar', length: 128 })
   pass: string
 
   @Column({ default: false })
@@ -24,5 +24,4 @@ export class User extends BaseEntity implements IUser {
 
   @Column({ default: 0, type: 'smallint' })
   wrongPassCount: number
-
 }

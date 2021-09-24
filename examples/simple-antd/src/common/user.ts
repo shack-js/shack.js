@@ -39,7 +39,8 @@ export const validateHash = async (password: string, hash: string) => {
 }
 
 export interface UserPayload {
-  account: string
+  account: string,
+  isAdmin: boolean
 }
 
 export const jwtSign = (obj: UserPayload): Promise<string> => {
@@ -63,9 +64,11 @@ export const jwtVerify = async (token: string): Promise<UserPayload> => {
 export const addUser = async (user: IUser) => {
   const { pass } = user
   if (pass.length < 6) throw '密码至少6位！'
-  let { identifiers } = await User.insert({
+  let count = User.count()
+  let isAdmin = !count // 第一个用户是管理员
+  await User.insert({
     ...user,
-    pass: await toHash(pass)
+    pass: await toHash(pass),
+    isAdmin
   })
-  return identifiers[0].id as number
 }

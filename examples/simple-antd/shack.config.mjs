@@ -42,6 +42,16 @@ export default {
             ]
           }
         }
+      },{
+        test: /[\/|\\]apis[\/|\\].*\.((m|c)?jsx?|tsx?)$/,
+        use: {
+          loader: '@shack-js/loader-fetch',
+          options: {
+            apiPrefix: '/apis',
+            backendFolder: 'src/apis',
+            sourceType: 'module'
+          }
+        }
       }
     ]
   },
