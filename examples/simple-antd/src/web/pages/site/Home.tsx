@@ -1,11 +1,10 @@
-import { PageHeader, Typography } from 'antd'
-const { Paragraph } = Typography
+import { PageHeader } from 'antd'
 const Home = () => {
   return <div>
     <PageHeader>首页</PageHeader>
-    <Paragraph >
+    <p >
       本项目为示例项目，本项目包含用户注册、登录、后台管理
-    </Paragraph>
+    </p>
   </div>
 }
 

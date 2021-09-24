@@ -19,10 +19,10 @@ export const Layout = () => {
         <div className="site-layout-content">
           <Suspense fallback={<Spin size="large" />}>
             <Switch>
+              <Route path="/" component={Home} exact/>
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
               <AdminRoute />
-              <Route path="/" component={Home} />
             </Switch>
           </Suspense>
         </div>

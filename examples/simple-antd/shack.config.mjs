@@ -42,7 +42,7 @@ export default {
             ]
           }
         }
-      },{
+      }, {
         test: /[\/|\\]apis[\/|\\].*\.((m|c)?jsx?|tsx?)$/,
         use: {
           loader: '@shack-js/loader-fetch',
@@ -60,7 +60,7 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: join(dirname(fileURLToPath(import.meta.url)), 'src','web', 'index.html'),
+      template: join(dirname(fileURLToPath(import.meta.url)), 'src', 'web', 'index.html'),
     }),
     new MiniCssExtractPlugin(),
     new CleanWebpackPlugin(),
@@ -68,6 +68,7 @@ export default {
   output: {
     path: join(dirname(fileURLToPath(import.meta.url)), 'dist', 'web'),
     filename: '[name].[contenthash].js',
+    publicPath: '/',
   },
   optimization: {
     splitChunks: {

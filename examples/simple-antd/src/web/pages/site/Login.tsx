@@ -12,11 +12,7 @@ const Login = () => {
     <PageHeader>登录</PageHeader>
     <Form
       form={form}
-      name="basic"
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
       initialValues={{ remember: true }}
-      autoComplete="off"
     >
       <Form.Item
         label="账号"
@@ -44,7 +40,7 @@ const Login = () => {
 
       <Form.Item
         shouldUpdate={true}
-        wrapperCol={{ offset: 8, span: 16 }}>
+      >
         {() => <Button type="primary" disabled={
           form.getFieldsError()
             .filter(({ errors }) => errors.length)

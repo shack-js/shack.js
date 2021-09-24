@@ -6,7 +6,7 @@ const Adminhome = () => {
     <PageHeader>首页</PageHeader>
     <div>
       <Card>
-        <h3> <NavLink to="/admin/users">用户管理</NavLink></h3>
+        <h3> <NavLink to="/admin/users/list">用户管理</NavLink></h3>
       </Card>
     </div>
   </div>

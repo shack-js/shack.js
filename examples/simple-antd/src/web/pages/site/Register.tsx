@@ -9,18 +9,13 @@ const Register = () => {
   const [form] = useForm()
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
-  const [errors, setErrors] = useState(true)
   return (<>
     <PageHeader>注册</PageHeader>
     <Form
-      name="basic"
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
       initialValues={{ remember: true }}
-      autoComplete="off"
       form={form}
     >
-      <Form.Item        
+      <Form.Item
         label="账号"
         name="account"
         rules={[{
@@ -33,7 +28,7 @@ const Register = () => {
         <Input />
       </Form.Item>
 
-      <Form.Item        
+      <Form.Item
         label="密码"
         name="pass"
         rules={[{
@@ -45,7 +40,7 @@ const Register = () => {
 
       <Form.Item
         shouldUpdate={true}
-        wrapperCol={{ offset: 8, span: 16 }}>
+      >
         {() => <Button type="primary" disabled={
           // form.isFieldsTouched(true) ||
           loading || form.getFieldsError()
