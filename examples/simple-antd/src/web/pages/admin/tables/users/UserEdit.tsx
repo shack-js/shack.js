@@ -3,14 +3,14 @@ import { useForm } from "antd/lib/form/Form"
 import { useState } from "react"
 import { useParams } from "react-router"
 import { Link } from "react-router-dom"
-import { add, findById, update } from "../../../../../apis/admin/user"
+import { addUser, findUserById, updateUser } from "../../../../../apis/admin/user"
 import { accountExists } from "../../../../../apis/user"
 import { swr } from '../../../../utils/swr'
 import { accountValidator, passwordValidator } from "../../../../utils/validators"
 
 const UserEdit = () => {
   let { id } = useParams() as { id?: string }
-  let [loading, value, error] = swr(async () => id ? await findById(id) : {})
+  let [loading, value, error] = swr(async () => id ? await findUserById(id) : {})
   let [form] = useForm()
   let [operating, setOperating] = useState(false)
   return <div>
@@ -71,13 +71,13 @@ const UserEdit = () => {
               try {
                 if (id) {
                   //更新
-                  await update({
+                  await updateUser({
                     ...form.getFieldsValue(),
                     id: parseInt(id),
                   })
                 } else {
                   //创建
-                  await add(form.getFieldsValue())
+                  await addUser(form.getFieldsValue())
                 }
                 notification.open({
                   message: id ? '更新成功' : '创建成功',
