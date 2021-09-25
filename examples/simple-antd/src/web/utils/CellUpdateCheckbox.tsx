@@ -14,7 +14,7 @@ export const CellUpdateCheckbox: FC<{ val: boolean, updateFn: (to: boolean) => P
       }).catch(e => notification.error({
         placement: "bottomRight",
         message: e.toString(),
-        description:`请刷新页面重试`
+        description: `请刷新页面重试`
       }))
     }} />
     {loading && <Spin size="small" />}

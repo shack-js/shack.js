@@ -1,4 +1,4 @@
-import { FindManyOptions } from 'typeorm'
+import { FindManyOptions, Like } from 'typeorm'
 import { User } from '../../common/db/User'
 import { toHash, IUser } from '../../common/user'
 
@@ -9,6 +9,7 @@ type ListUserOptions = {
   pageSize?: number,
   page?: number,
   find?: FindManyOptions<User>,
+  filters?: any
 }
 
 export type ListUserResult = {
@@ -19,16 +20,24 @@ export type ListUserResult = {
 }
 
 export const listUser = async (options: ListUserOptions = {}): Promise<ListUserResult> => {
-  let { pageSize = DEFAULT_PAGE_SIZE, page = 1, find = {} } = options
+  let { pageSize = DEFAULT_PAGE_SIZE, page = 1, find = {}, filters = {} } = options
+  let { where = {} } = find
+  for (let k in filters) {
+    where[k] = Like(`%${filters[k]}%`)
+  }
+  let findOption = {
+    ...find,
+    where
+  }
   return {
     page,
     pageSize,
-    total: await User.count(find),
+    total: await User.count(findOption),
     list: await User.find({
-      ...find,
+      ...findOption,
       select: selectFields,
       skip: (page - 1) * pageSize,
-      take: pageSize
+      take: pageSize,
     })
   }
 }
@@ -47,3 +56,13 @@ export { addUser } from '../../common/user'
 export const findUserById = async (id: number | string) => await User.findOne(id, {
   select: selectFields
 })
+
+export const fieldContains = async (field: any, value: string) => {
+  let arr = await User.find({
+    select: [field],
+    where: {
+      [field]: Like(`%${value}%`)
+    }
+  })
+  return arr.map(x => x[field])
+}
