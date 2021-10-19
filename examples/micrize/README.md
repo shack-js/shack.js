@@ -1,4 +1,4 @@
-# template-typescript
+# with micrize
 
 typescript template for shack.js
 
