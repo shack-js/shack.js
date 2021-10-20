@@ -19,7 +19,7 @@ export class User extends BaseEntity implements IUser {
   disabled: boolean
 
 
-  @Column({ default: 0, type: 'int' })
+  @Column({ default: 0, type: 'bigint' })
   wrongPassDay: number
 
   @Column({ default: 0, type: 'smallint' })

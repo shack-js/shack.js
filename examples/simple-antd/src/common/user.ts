@@ -64,7 +64,7 @@ export const jwtVerify = async (token: string): Promise<UserPayload> => {
 export const addUser = async (user: IUser) => {
   const { pass } = user
   if (pass.length < 6) throw '密码至少6位！'
-  let count = User.count()
+  let count = await User.count()
   let isAdmin = !count // 第一个用户是管理员
   await User.insert({
     ...user,
