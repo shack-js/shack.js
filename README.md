@@ -44,6 +44,8 @@ client | 客户端:
 })()
 ```
 
+[*why shack.js and why not | shack.js 的优缺点*](./docs/why-shackjs-and-why-not.md)
+
 
 ## quick usage | 快速上手
 
