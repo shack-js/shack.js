@@ -46,6 +46,7 @@ client | 客户端:
 
 [*why shack.js and why not | shack.js 的优缺点*](./docs/why-shackjs-and-why-not.md)
 
+try it out on codesandbox: https://codesandbox.io/s/shack-js-mjs-zny16
 
 ## quick usage | 快速上手
 
