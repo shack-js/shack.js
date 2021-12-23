@@ -89,7 +89,6 @@ more | 更多：https://github.com/shack-js/cli
 - [mongoose](./examples/mongoose)
 - [elasticsearch](./examples/elasticsearch)
 - [blog site | 博客网站](./examples/blog-site)
-- [simple chat with socket.io | 基于 socket.io 的简单聊天](./examples/simple-chat)
 
 ## tutorials | 教程
 
